@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Gym Private Tracker — seu diário de treino pessoal" />
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f5f5f0" media="(prefers-color-scheme: light)" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Gym Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="app-header" id="appHeader">
+    <button class="btn-back" id="btnBack" aria-label="Voltar" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <div class="header-title">
+      <span class="header-eyebrow" id="headerEyebrow">Personal</span>
+      <h1 class="header-main" id="headerMain">GYM TRACKER</h1>
+    </div>
+    <button class="btn-reset" id="btnReset" aria-label="Resetar treino" hidden title="Resetar treino">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="1 4 1 10 7 10"/>
+        <path d="M3.51 15a9 9 0 1 0 .49-5.51"/>
+      </svg>
+    </button>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="app-main" id="appMain">
+
+    <!-- HOME VIEW -->
+    <section class="view view-home active" id="viewHome" aria-label="Menu de treinos">
+      <div class="home-intro">
+        <p class="home-date" id="homeDate"></p>
+        <p class="home-sub">Escolha o treino de hoje</p>
+      </div>
+      <nav class="category-grid" id="categoryGrid" aria-label="Categorias de treino">
+        <!-- Gerado via JS -->
+      </nav>
+      <div class="home-streak" id="homeStreak"></div>
+    </section>
+
+    <!-- WORKOUT VIEW -->
+    <section class="view view-workout" id="viewWorkout" aria-label="Treino" hidden>
+      <div class="workout-header">
+        <div class="workout-meta" id="workoutMeta"></div>
+        <div class="workout-progress-bar">
+          <div class="workout-progress-fill" id="progressFill"></div>
+        </div>
+        <p class="workout-progress-label" id="progressLabel"></p>
+      </div>
+      <ul class="exercise-list" id="exerciseList" aria-label="Lista de exercícios">
+        <!-- Gerado via JS -->
+      </ul>
+      <div class="workout-footer">
+        <button class="btn-finish" id="btnFinish">
+          <span>Finalizar Treino</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ===== MODAL DE CONCLUSÃO ===== -->
+  <div class="modal-overlay" id="modalOverlay" hidden aria-modal="true" role="dialog">
+    <div class="modal-box">
+      <div class="modal-icon">🏆</div>
+      <h2 class="modal-title">Treino Concluído!</h2>
+      <p class="modal-body" id="modalBody"></p>
+      <div class="modal-actions">
+        <button class="btn-modal-secondary" id="btnModalKeep">Continuar editando</button>
+        <button class="btn-modal-primary" id="btnModalHome">Voltar ao início</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
